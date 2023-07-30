@@ -111,6 +111,20 @@ html {
   border-radius: 5rem;
 }
 
+.form-input-wrapper:nth-child(1),
+.form-input-wrapper:nth-child(4) {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.change .form-input-wrapper:nth-child(1),
+.change .form-input-wrapper:nth-child(4) {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.3s 0.3s;
+}
+
 .form input {
   width: 50rem;
   height: 5rem;
@@ -120,12 +134,12 @@ html {
   padding: 0 2rem;
   border: none;
   border-radius: 5rem;
-  transition: box-shadow 0.3s;
 }
 
 .form-input {
   box-shadow: 0.3rem 0.3rem 0.5rem #eee inset;
   color: #888;
+  transition: box-shadow 0.3s;
 }
 
 .form-input:hover {
@@ -143,6 +157,14 @@ html {
   letter-spacing: 0.2rem;
   font-weight: bold;
   cursor: pointer;
+  position: relative;
+  top: -6rem;
+  transition: top 0.3s 0.3s, box-shadow 0.3s;
+}
+
+.change .form-btn {
+  top: 1rem;
+  /* transition: top 0.3s; */
 }
 
 .form-btn:hover {
