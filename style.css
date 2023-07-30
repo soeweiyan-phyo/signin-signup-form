@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Inconsolata", monospace;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  position: absolute;
+  top: 5rem;
+  font-size: 7rem;
+  font-weight: 300;
+  color: #f03535;
+  letter-spacing: 1rem;
+  text-shadow: 0.2rem 0.2rem 0.5rem #aaa;
+}
+
+.buttons {
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons button {
+  width: 10rem;
+  height: 4rem;
+  font-size: 2rem;
+  color: #f03535;
+  letter-spacing: 0.1rem;
+  border: none;
+  border-radius: 5rem;
+  box-shadow: 0.3rem 0.3rem 0.8rem #eee;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signin-btn {
+  background-color: #e7e7e7;
+}
+
+.change .signin-btn {
+  background-color: #fff;
+}
+
+.signup-btn {
+  background-color: #fff;
+}
+
+.change .signup-btn {
+  background-color: #e7e7e7;
+}
+
+.form-bg {
+  position: absolute;
+  width: 65rem;
+  height: 65rem;
+  box-shadow: 1.5rem 1.5rem 1.5rem #ddd;
+  transform: rotate(45deg);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.form-input-wrapper {
+  margin: 1.5rem 0;
+  box-shadow: 0.5rem 0.5rem 0.5rem #eee;
+  border-radius: 5rem;
+}
+
+.form input {
+  width: 50rem;
+  height: 5rem;
+  font-size: 1.7rem;
+  letter-spacing: 0.2rem;
+  background-color: #fff;
+  padding: 0 2rem;
+  border: none;
+  border-radius: 5rem;
+  transition: box-shadow 0.3s;
+}
+
+.form-input {
+  box-shadow: 0.3rem 0.3rem 0.5rem #eee inset;
+  color: #888;
+}
+
+.form-input:hover {
+  box-shadow: 0.5rem 0.5rem 1rem #eee inset;
+}
+
+.message {
+  display: none;
+}
+
+.form-btn {
+  box-shadow: 0.5rem 0.5rem 1rem #ddd;
+  color: #f03535;
+  margin: 2rem 0;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-btn:hover {
+  box-shadow: 0.5rem 0.5rem 2rem #ddd;
+}
