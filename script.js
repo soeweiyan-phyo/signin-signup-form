@@ -59,11 +59,42 @@ const checkRequiredFields = (inputArr) => {
   });
 };
 
+const checkLength = (input, min, max) => {
+  if (input.value.length < min) {
+    error(input, `${input.id} must be at least ${min} characters`);
+  } else if (input.value.length > max) {
+    error(input, `${input.id} must be less than ${max} characters`);
+  } else {
+    success(input);
+  }
+};
+
+const passwordsMatch = (input1, input2) => {
+  if (input1.value !== input2.value) {
+    error(input2, "Passwords do not match");
+  }
+};
+
+const checkEmail = (input) => {
+  const regEx =
+    /(?:[a-z0-9+!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/i;
+
+  if (regEx.test(input.value.trim())) {
+    success(input);
+  } else {
+    error(input, "Email is not valid");
+  }
+};
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   if (form.classList[1] === "sign-up") {
     checkRequiredFields([username, email, password, password2]);
+    checkLength(username, 2, 15);
+    checkLength(password, 8, 25);
+    passwordsMatch(password, password2);
   } else {
     checkRequiredFields([email, password]);
   }
+  checkEmail(email);
 });
