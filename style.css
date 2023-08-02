@@ -109,6 +109,7 @@ html {
   margin: 1.5rem 0;
   box-shadow: 0.5rem 0.5rem 0.5rem #eee;
   border-radius: 5rem;
+  position: relative;
 }
 
 .form-input-wrapper:nth-child(1),
@@ -147,7 +148,28 @@ html {
 }
 
 .message {
-  display: none;
+  position: absolute;
+  margin-top: 1rem;
+  visibility: hidden;
+  opacity: 0;
+
+  left: 2rem;
+  color: #f55e5e;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+
+  transition: opacity 0.3s;
+}
+
+.error .message {
+  visibility: visible;
+  opacity: 1;
+}
+
+.success .form-input {
+  border: 0.1rem solid #46e75e;
 }
 
 .form-btn {
