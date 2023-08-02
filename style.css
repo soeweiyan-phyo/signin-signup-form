@@ -192,3 +192,62 @@ html {
 .form-btn:hover {
   box-shadow: 0.5rem 0.5rem 2rem #ddd;
 }
+
+@media (max-width: 1400px) {
+  .form-bg {
+    transform: rotate(0);
+    height: 55rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .heading {
+    font-size: 5rem;
+  }
+
+  .form-bg {
+    width: 55rem;
+    height: 50rem;
+  }
+
+  .form input {
+    width: 40rem;
+  }
+}
+
+@media (max-width: 700px) {
+  html {
+    font-size: 55%;
+  }
+
+  .heading {
+    font-size: 4rem;
+    top: 2rem;
+  }
+
+  .buttons {
+    left: 2rem;
+    top: 2rem;
+  }
+
+  .buttons button {
+    width: 7rem;
+    height: 3rem;
+    font-size: 1.7rem;
+  }
+
+  .form-bg {
+    width: 45rem;
+    height: 45rem;
+  }
+
+  .form input {
+    width: 35rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 42%;
+  }
+}
